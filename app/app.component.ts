@@ -1,7 +1,13 @@
 import { Component } from '@angular/core';
-
+import {HeroService} from './myservice';
 @Component({
   selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`,
+  template:``
+  ,providers:[HeroService]
 })
-export class AppComponent  { name = 'Angular'; }
+export class AppComponent  {
+  constructor(heroService: HeroService) {
+    console.log(heroService.myname,heroService.a());
+  }
+
+}
